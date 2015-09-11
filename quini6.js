@@ -34,23 +34,12 @@ if (Meteor.isClient) {
       sortedWinners;
 
 
-
-
-
     }
+
   });
 
 
-
-
-
-
-
-
 }
-
-
-
 
 
 if (Meteor.isServer) {
