@@ -20,7 +20,12 @@ for (step = 0; step < 6; step++) {
   winners[step] = number;
 }
 
+
+
 var sortedWinners = winners.sort(ascending);
 console.log(sortedWinners);
+
+
+// Functions
 
 function ascending (elem1, elem2) { return elem1 - elem2; }
