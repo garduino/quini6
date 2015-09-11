@@ -31,7 +31,8 @@ if (Meteor.isClient) {
     'click button': function () {
       // increment the counter when button is clicked
       //Session.set('sortedWinners', Session.get('sortedWinners'));
-      sortedWinners;
+      Session.set('sortedWinners');
+
 
 
     }
