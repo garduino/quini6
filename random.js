@@ -28,4 +28,6 @@ console.log(sortedWinners);
 
 // Functions
 
+// Order a numeric array, taken from http://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=834:funciones-arrays-javascript-push-sort-ordenar-numeros-concat-join-pop-shift-slice-splice-etc-cu01153e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206
+
 function ascending (elem1, elem2) { return elem1 - elem2; }
