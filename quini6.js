@@ -30,7 +30,7 @@ Template.try.helpers({
       // Con el return siguiente se despliega en el texto del html.
       // return calculateWinners();
       var x = calculateWinners();
-      alert("Es probable que saltan estos números: " + x);
+      alert("Es probable que salgan estos números: " + x);
 
     }
   });
@@ -38,7 +38,7 @@ Template.try.helpers({
   Template.try.events({
     'click button': function (event, template) {
       var x = calculateWinners();
-      alert("Es probable que saltan estos números: " + x);
+      alert("Es probable que salgan estos números: " + x);
       // No logro aún encontrar una forma de actualizar el template, por eso
       // estoy usando el alert
       // event.target.show.Template.try();
