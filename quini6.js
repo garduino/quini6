@@ -1,8 +1,11 @@
 if (Meteor.isClient) {
+// var winners = [0, 0, 0, 0, 0, 0];
 
 function calculateWinners() {
 
   var winners = [0, 0, 0, 0, 0, 0];
+
+  Session.set(winners);
 
   for (step = 0; step < 6; step++) {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
@@ -25,20 +28,24 @@ function calculateWinners() {
  }
 
 
-Template.try.helpers({
+Template.main.helpers({
     sortedWinners: function (event, template) {
       // Con el return siguiente se despliega en el texto del html.
-      // return calculateWinners();
-      var x = calculateWinners();
-      alert("Es probable que salgan estos números: " + x);
+      //return calculateWinners();
+
+      Session.set(calculateWinners());
+
+      //var x = calculateWinners();
+      //alert("Es probable que salgan estos números: " + x);
 
     }
   });
 
-  Template.try.events({
+  Template.main.events({
     'click button': function (event, template) {
-      var x = calculateWinners();
-      alert("Es probable que salgan estos números: " + x);
+      // var x = calculateWinners();
+      //alert("Es probable que salgan estos números: " + x);
+      //
       // No logro aún encontrar una forma de actualizar el template, por eso
       // estoy usando el alert
       // event.target.show.Template.try();
@@ -46,6 +53,13 @@ Template.try.helpers({
       // return Template.instance().sortedWinners = calculateWinners();
       // return Template.instance().sortedWinners.set();
       // Template.try.instance().sortedWinners.set(x);
+
+      // var x = calculateWinners();
+      // Session.set('Template.main', calculateWinners());
+
+      Session.set('calculateWinners');
+
+      // return calculateWinners();
 
     }
 
