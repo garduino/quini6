@@ -5,7 +5,7 @@ function calculateWinners() {
 
   var winners = [0, 0, 0, 0, 0, 0];
 
-  Session.set(winners);
+  // Session.set(winners);
 
   for (step = 0; step < 6; step++) {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
@@ -33,7 +33,7 @@ Template.main.helpers({
       // Con el return siguiente se despliega en el texto del html.
       //return calculateWinners();
 
-      Session.set(calculateWinners());
+      Session.set('sortedWinners', calculateWinners());
 
       //var x = calculateWinners();
       //alert("Es probable que salgan estos números: " + x);
@@ -55,9 +55,9 @@ Template.main.helpers({
       // Template.try.instance().sortedWinners.set(x);
 
       // var x = calculateWinners();
-      // Session.set('Template.main', calculateWinners());
+      // Session.set('sortedWinners', x);
 
-      Session.set('calculateWinners');
+      Session.set('sortedWinners', calculateWinners());
 
       // return calculateWinners();
 
