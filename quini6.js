@@ -5,35 +5,53 @@ function calculateWinners() {
   var winners = [0,0,0,0,0,0];
   var counter;
   var founded = 0;
+  var i = 1;
 
-  for (step = 0; step < 6; step++) {
+  while (i < 7) {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
     var number = Math.floor((Math.random() * 45) + 1);
 
-    // Veo si el número ya existe en el array, para evitar duplicados
+  //  for( counter=0; counter < winners.length; counter++ )
+  //  {
+  //    if( winners[counter] == number) {
+  //        founded = 1;
+  //        break;
+  //      }
+  //  }
 
-    for( counter=0; counter < winners.length; counter++ )
-    {
-      if( winners[counter] == number) {
-          founded = 1;
-          break;
-        }
-    }
-
-    if (founded = 1) {
-    founded = 0;
-    } else {
-      winners[step] = number;
-    }
-
+  //  if (founded = 1) {
+  //    founded = 0;
+  //      console.log(number);
+  //    break;
+  //  } else {
+  console.log(i,number);
+    winners[i] = number;
+  //      console.log(number);
+  //    founded = 0;
+  i++;
+  //  }
 
 }
 
 
 
 
+//  for (step = 0; step < 6; step++) {
+    // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
+//    var number = Math.floor((Math.random() * 45) + 1);
+
+    // Veo si el número ya existe en el array, para evitar duplicados
+
+//      winners[step] = number;
+
+//    }
+
+
+
+
 
   this.sortedWinners = winners.sort(ascending);
+  // this.sortedWinners = winners.sort();
   return sortedWinners;
 
   // Functions
