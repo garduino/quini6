@@ -4,7 +4,7 @@ function calculateWinners() {
 
   var winners = [0,0,0,0,0,0];
   var counter;
-  var founded = 0;
+  var founded;
   var i = 1;
 
   while (i < 7) {
@@ -18,6 +18,10 @@ function calculateWinners() {
   //        break;
   //      }
   //  }
+
+// http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
+  founded = number in winners;
+  console.log(founded);
 
   //  if (founded = 1) {
   //    founded = 0;
