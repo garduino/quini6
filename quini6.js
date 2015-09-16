@@ -1,19 +1,37 @@
 if (Meteor.isClient) {
-// var winners = [0, 0, 0, 0, 0, 0];
 
 function calculateWinners() {
 
-  var winners = new Array(6);
-
-  // Session.set(winners);
+  var winners = [0,0,0,0,0,0];
+  var counter;
+  var founded = 0;
 
   for (step = 0; step < 6; step++) {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
     var number = Math.floor((Math.random() * 45) + 1);
 
+    // Veo si el número ya existe en el array, para evitar duplicados
 
-    winners[step] = number;
-  }
+    for( counter=0; counter < winners.length; counter++ )
+    {
+      if( winners[counter] == number) {
+          founded = 1;
+          break;
+        }
+    }
+
+    if (founded = 1) {
+    founded = 0;
+    } else {
+      winners[step] = number;
+    }
+
+
+}
+
+
+
+
 
   this.sortedWinners = winners.sort(ascending);
   return sortedWinners;
