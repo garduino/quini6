@@ -3,19 +3,18 @@ if (Meteor.isClient) {
 
 function calculateWinners() {
 
-  var winners = [0, 0, 0, 0, 0, 0];
+  var winners = new Array(6);
 
   // Session.set(winners);
 
   for (step = 0; step < 6; step++) {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
     var number = Math.floor((Math.random() * 45) + 1);
+
+
     winners[step] = number;
   }
 
-  // var sortedWinners = winners.sort(ascending);
-  //console.log(sortedWinners);
-  // return sortedWinners;
   this.sortedWinners = winners.sort(ascending);
   return sortedWinners;
 
@@ -25,7 +24,10 @@ function calculateWinners() {
 
   function ascending (elem1, elem2) { return elem1 - elem2; }
 
- }
+
+
+
+}
 
 
 Template.main.helpers({
