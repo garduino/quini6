@@ -63,9 +63,8 @@ Template.main.helpers({
       // var x = calculateWinners();
       // Session.set('sortedWinners', x);
 
-      Session.set('sortedWinners', calculateWinners());
-
-      // return calculateWinners();
+      // Session.set('sortedWinners', calculateWinners());
+      return calculateWinners();
 
     }
 
