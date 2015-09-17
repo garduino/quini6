@@ -2,7 +2,8 @@ if (Meteor.isClient) {
 
 function calculateWinners() {
 
-  var winners = [0,0,0,0,0,0];
+  var winners = [];
+  // winners.length = 6;
   var counter;
   var founded;
   var i = 1;
@@ -11,62 +12,25 @@ function calculateWinners() {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
     var number = Math.floor((Math.random() * 45) + 1);
 
-  //  for( counter=0; counter < winners.length; counter++ )
-  //  {
-  //    if( winners[counter] == number) {
-  //        founded = 1;
-  //        break;
-  //      }
-  //  }
+    while (number in winners) {
+      console.log(number, winners)
+      var number = Math.floor((Math.random() * 45) + 1);
+    }
 
-// http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
-  founded = number in winners;
-  console.log(founded);
+    // http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
+    // founded = number in winners;
+    // console.log(founded, i, number);
 
-  //  if (founded = 1) {
-  //    founded = 0;
-  //      console.log(number);
-  //    break;
-  //  } else {
-  console.log(i,number);
-    winners[i] = number;
-  //      console.log(number);
-  //    founded = 0;
-  i++;
-  //  }
-
+    winners.push(number);
+    i++;
 }
 
-
-
-
-//  for (step = 0; step < 6; step++) {
-    // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
-//    var number = Math.floor((Math.random() * 45) + 1);
-
-    // Veo si el número ya existe en el array, para evitar duplicados
-
-//      winners[step] = number;
-
-//    }
-
-
-
-
-
   this.sortedWinners = winners.sort(ascending);
-  // this.sortedWinners = winners.sort();
   return sortedWinners;
 
   // Functions
-
   // Order a numeric array, taken from http://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=834:funciones-arrays-javascript-push-sort-ordenar-numeros-concat-join-pop-shift-slice-splice-etc-cu01153e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206
-
   function ascending (elem1, elem2) { return elem1 - elem2; }
-
-
-
-
 }
 
 
