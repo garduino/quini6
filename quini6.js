@@ -37,9 +37,9 @@ function calculateWinners() {
 Template.main.helpers({
     sortedWinners: function (event, template) {
       // Con el return siguiente se despliega en el texto del html.
-      //return calculateWinners();
+      return calculateWinners();
 
-      Session.set('sortedWinners', calculateWinners());
+      // Session.set('sortedWinners', calculateWinners());
 
       //var x = calculateWinners();
       //alert("Es probable que salgan estos números: " + x);
