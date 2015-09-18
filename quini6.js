@@ -12,14 +12,12 @@ function calculateWinners() {
     // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
     var number = Math.floor((Math.random() * 45) + 1);
 
+    // http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
+    // De la página anterior tomé el "in"
     while (number in winners) {
       console.log(number, winners)
       var number = Math.floor((Math.random() * 45) + 1);
     }
-
-    // http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
-    // founded = number in winners;
-    // console.log(founded, i, number);
 
     winners.push(number);
     i++;
