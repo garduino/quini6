@@ -37,40 +37,17 @@ function calculateWinners() {
 
 Template.main.helpers({
     sortedWinners: function (event, template) {
-      // Con el return siguiente se despliega en el texto del html.
-      // return calculateWinners();
+
       calculateWinners();
+
       return Session.get('currentWinners');
-
-
-      // Session.set('sortedWinners', calculateWinners());
-
-      //var x = calculateWinners();
-      //alert("Es probable que salgan estos números: " + x);
 
     }
   });
 
   Template.main.events({
     'click button': function (event, template) {
-      // var x = calculateWinners();
-      //alert("Es probable que salgan estos números: " + x);
-      //
-      // No logro aún encontrar una forma de actualizar el template, por eso
-      // estoy usando el alert
-      // event.target.show.Template.try();
-      // return helperFunctions();
-      // return Template.instance().sortedWinners = calculateWinners();
-      // return Template.instance().sortedWinners.set();
-      // Template.try.instance().sortedWinners.set(x);
 
-      // var x = calculateWinners();
-      // Session.set('sortedWinners', x);
-
-      // Session.set('sortedWinners', calculateWinners());
-      // return calculateWinners();
-      // Template.main.sortedWinners;
-      // var sortedWinners = Template.instance().sortedWinners;
       calculateWinners();
 
     }
