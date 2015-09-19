@@ -26,7 +26,8 @@ function calculateWinners() {
 }
 
   this.sortedWinners = winners.sort(ascending);
-  return sortedWinners;
+  // return sortedWinners;
+  Session.set('currentWinners', sortedWinners);
 
   // Functions
   // Order a numeric array, taken from http://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=834:funciones-arrays-javascript-push-sort-ordenar-numeros-concat-join-pop-shift-slice-splice-etc-cu01153e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206
@@ -37,7 +38,10 @@ function calculateWinners() {
 Template.main.helpers({
     sortedWinners: function (event, template) {
       // Con el return siguiente se despliega en el texto del html.
-      return calculateWinners();
+      // return calculateWinners();
+      calculateWinners();
+      return Session.get('currentWinners');
+
 
       // Session.set('sortedWinners', calculateWinners());
 
@@ -65,7 +69,9 @@ Template.main.helpers({
 
       // Session.set('sortedWinners', calculateWinners());
       // return calculateWinners();
-      Template.main.sortedWinners;
+      // Template.main.sortedWinners;
+      // var sortedWinners = Template.instance().sortedWinners;
+      calculateWinners();
 
     }
 
