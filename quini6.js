@@ -14,14 +14,15 @@ function calculateWinners() {
   var number = Math.floor((Math.random() * 45) + 1);
   winners.push(number);
   // winners[1] = number;
-  console.log(winners);
+  console.log('Primer nùmero', winners);
 
   while (i < 6) {
 
     number = Math.floor((Math.random() * 45) + 1);
+    console.log('Primer cálculo después del while', number, winners);
 
     while (number in winners) {
-      // console.log(number, winners)
+      console.log(typeof number, number, typeof winners, winners);
       number = Math.floor((Math.random() * 45) + 1);
     }
 
