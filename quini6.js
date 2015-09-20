@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
 
+
 function calculateWinners() {
 
   var winners = [];
@@ -8,13 +9,20 @@ function calculateWinners() {
   var founded;
   var i = 1;
 
-  while (i < 7) {
-    // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
-    var number = Math.floor((Math.random() * 45) + 1);
+  // Almaceno primer número en el array
+  // Calculo random según http://www.w3schools.com/jsref/jsref_random.asp
+  var number = Math.floor((Math.random() * 45) + 1);
+  winners.push(number);
+  // winners[1] = number;
+  console.log(winners);
+
+  while (i < 6) {
+
+    number = Math.floor((Math.random() * 45) + 1);
 
     while (number in winners) {
-      console.log(number, winners)
-      var number = Math.floor((Math.random() * 45) + 1);
+      // console.log(number, winners)
+      number = Math.floor((Math.random() * 45) + 1);
     }
 
     // http://chuwiki.chuidiang.org/index.php?title=Arrays_y_Objetos_en_JavaScript
@@ -35,6 +43,8 @@ function calculateWinners() {
 }
 
 
+
+
 Template.main.helpers({
     sortedWinners: function (event, template) {
 
@@ -44,6 +54,9 @@ Template.main.helpers({
 
     }
   });
+
+
+
 
   Template.main.events({
     'click button': function (event, template) {
@@ -56,6 +69,8 @@ Template.main.helpers({
 
 
 }
+
+
 
 
 if (Meteor.isServer) {
