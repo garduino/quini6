@@ -14,15 +14,15 @@ function calculateWinners() {
   var number = Math.floor((Math.random() * 45) + 1);
   winners.push(number);
   // winners[1] = number;
-  console.log('Primer nùmero', winners);
+  console.log('Primer número', number, winners);
 
   while (i < 6) {
 
     number = Math.floor((Math.random() * 45) + 1);
-    console.log('Primer cálculo después del while', number, winners);
+    console.log('Segundo número', number, winners);
 
     while (number in winners) {
-      console.log(typeof number, number, typeof winners, winners);
+      console.log('Numero existente!', number, winners);
       number = Math.floor((Math.random() * 45) + 1);
     }
 
@@ -30,7 +30,9 @@ function calculateWinners() {
     // founded = number in winners;
     // console.log(founded, i, number);
 
+    console.log('Numero correcto!', number, winners);
     winners.push(number);
+    console.log('Ahora winners es: ', winners);
     i++;
 }
 
