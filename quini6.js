@@ -19,7 +19,7 @@ function calculateWinners() {
   while (i < 6) {
 
     number = Math.floor((Math.random() * 45) + 1);
-    console.log('Segundo número', number, winners);
+    console.log('Elemento número', i+1,'del array', number, winners);
 
     while (number in winners) {
       console.log('Numero existente!', number, winners);
