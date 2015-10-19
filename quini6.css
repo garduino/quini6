@@ -4,3 +4,9 @@ h1 {
     color: #c81010;
     text-align: center;
 }
+p {
+    align: center;
+    /* border:1px solid blue;
+    padding:10px;
+    margin:30px; */
+}
