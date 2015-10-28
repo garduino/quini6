@@ -4,15 +4,16 @@
 
 <body>
   <h1>Tus números ganadores para el Quini 6!</h1>
-  <h2>Bienvenido a tu cita con la fortuna!</h2>
+  <center><img src="quini6.jpg"  /></center>
+  <center><h2>Bienvenido a tu cita con la fortuna!</h2></center>
 
   {{> main}}
 </body>
 
 <template name="main">
-  <p>Presionando el botón de más abajo, el programa intentará adivinar
-     los números ganadores del próximo sorteo del Quini6!</p>
+  <center><p>Presionando el botón de más abajo, el programa intentará adivinar
+     los números ganadores del próximo sorteo del Quini6!</p></center>
   <center><button>Números Ganadores</button></center>
-  <p>Me parece que van a salir estos números:</p>
+  <center><p>Me parece que van a salir estos números:</p></center>
   <center><h1>{{sortedWinners}}</h1></center>
 </template>

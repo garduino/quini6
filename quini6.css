@@ -1,4 +1,9 @@
 /* CSS declarations go here */
+body {
+  /* background: url(bg.jpg) no-repeat fixed; */
+  /* background: transparent url('/quini6.jpg') no-repeat center top;  margin-top: 50px; */
+}
+
 h1 {
     font-size: 40px;
     color: #c81010;
